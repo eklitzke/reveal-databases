@@ -143,7 +143,7 @@ Magic!
 
 # Indexes
 
-How you make databases fast
+No, they're not *indices*.
 
 ---
 
@@ -222,5 +222,77 @@ The **bad**: indexes **increase write I/O**.
 
 ---
 
+# SQL vs. NoSQL
+
+[My feelings on the matter...](https://www.youtube.com/watch?v=QiZNSzWIaLo)
+
+---
+
+## Relational Databases
+
+SQL databases are also called **relational databases**. They feature:
+
+ * The SQL query language
+ * Transactions
+ * Full ACID semantics
+ * Typically are not "distributed"
+
+Popular examples include MySQL and Postgres.
+
+---
+
+## NoSQL Databases
+
+NoSQL databases are **non-relational databases** that:
+
+ * Do not use the SQL query language
+ * May not have transactions
+ * Typically sacrifice some ACID features
+ * Typically are "distributed"
+
+---
+
+## Differences
+
+The differences mostly come down to a difference in philosophies about:
+
+ * How to scale reads and writes
+ * How to do high availability
+
+---
+
+## Relational Scaling
+
+Typically relational databases are scaled by having one "master" that can serve
+reads and writes, and an arbitrary number of "slaves" that can only serve reads.
+
+This is good if your application is read-heavy, less good if your application is
+write-heavy.
+
+---
+
+## NoSQL Scaling
+
+NoSQL databases typically are "masterless", meaning that writes can be
+distributed across an arbitrary number of nodes.
+
+This makes scaling writes easier, but typically comes at the cost of less
+features, weaker transactionality, etc.
+
+---
+
+## My Opinion
+
+Stick to relational databases if you can.
+
+I personally think the scaling problems for relational databases are over-hyped.
+But it really depends on your use case.
+
+---
+
 # The End
+
 ### Evan Klitzke / evan@uber.com
+
+You can find this presentation on GitHub at:
+**https://github.com/eklitzke/reveal-databases**
