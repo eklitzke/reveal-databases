@@ -1,9 +1,6 @@
 # Databases
+
 ### Evan Klitzke / evan@uber.com
-
----
-
-## About Me
 
 ---
 
@@ -224,7 +221,9 @@ The **bad**: indexes **increase write I/O**.
 
 # SQL vs. NoSQL
 
-[My feelings on the matter...](https://www.youtube.com/watch?v=QiZNSzWIaLo)
+----
+
+![My feelings on the matter...](./chosen-one.gif)
 
 ---
 
