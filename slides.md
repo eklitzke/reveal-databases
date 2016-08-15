@@ -7,16 +7,18 @@
 
 ---
 
-## What Is A Database?
+## Outline
 
-Broadly speaking, a database is a system for storing and querying data. There
-are a bunch of kinds:
+ * ACID
+ * Indexes
+ * SQL vs NoSQL
 
- * Relational (SQL)
- * Embedded
- * NoSQL
+---
 
-We'll explore what a database **does** to understand the differences.
+# ACID
+
+Canonical term for the properties a database should provide; definitely coined
+by hippies who understood the pun they were making.
 
 ---
 
@@ -108,6 +110,9 @@ SQL is a really funny programming language. It was designed in the 1970s around
 the same time as COBOL, when people though programming languages should look
 like spoken English.
 
+By convention keywords are all caps, and table names and column names are
+lowercase.
+
 ---
 
 ## Atomicity Example
@@ -133,6 +138,87 @@ T1:   SELECT COUNT(*) FROM accounts;  -- returns original value
 
 Even though *T2* inserts a row into `accounts`, *T1* will not observe the row.
 Magic!
+
+---
+
+# Indexes
+
+How you make databases fast
+
+---
+
+## Querying
+
+One of the important things that databases let you do is efficiently query data.
+Examples of questions you might want to query:
+
+ * How many trips has a given user taken?
+ * What's the average fare in London over the last 30 days?
+ * Which drivers have a rating less than 4.0?
+
+---
+
+## Trips Index
+
+How many trips has a given user taken?
+
+```
+CREATE INDEX ix_trips ON trips (user_id);
+
+SELECT COUNT(*) FROM trips WHERE user_id = 1;
+```
+
+---
+
+## Fare Index
+
+What's the average fare in London over the last 30 days?
+
+```
+CREATE INDEX ix_fare ON fares (city_id, when);
+
+SELECT AVG(fare)
+  FROM fares
+ WHERE city_id = 100
+    AND when >= NOW() - INTERVAL('30 days');
+```
+
+---
+
+## Rating Index
+
+Which drivers have an average rating less than 4.0?
+
+```
+CREATE INDEX ix_rating ON drivers (rating);
+
+SELECT * FROM drivers WHERE rating < 4.0;
+```
+
+---
+
+## Index Advantages
+
+Indexes make it so that instead of examining *all* of the data in the database
+to answer a query, you can instead just examine a small amount of data. Indexes
+make queries fast.
+
+---
+
+## Index Disavantages
+
+Every time a new row is inserted or updated any indexes on that data will have
+to be updated. This takes up extra disk space and extra disk I/O.
+
+Having too many indexes makes writes slower.
+
+---
+
+## Index Summary
+
+The **good**: indexes **reduce read I/O**.
+
+The **bad**: indexes **increase write I/O**.
 
 ---
 
