@@ -4,6 +4,12 @@
 
 ---
 
+# Sales Pitch
+
+About me; and why databases are cool.
+
+---
+
 ## Outline
 
  * ACID
@@ -224,6 +230,10 @@ The **bad**: indexes **increase write I/O**.
 ----
 
 ![My feelings on the matter...](./chosen-one.gif)
+
+----
+
+![Join me](./join-me.gif)
 
 ---
 
