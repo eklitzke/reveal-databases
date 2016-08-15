@@ -23,6 +23,10 @@ About me; and why databases are cool.
 Canonical term for the properties a database should provide; definitely coined
 by hippies who understood the pun they were making.
 
+----
+
+![ACID](./hoffman.jpg)
+
 ---
 
 ## ACID
@@ -197,6 +201,12 @@ CREATE INDEX ix_rating ON drivers (rating);
 
 SELECT * FROM drivers WHERE rating < 4.0;
 ```
+
+---
+
+## How Indexes Work
+
+![MySQL Index](./mysql_index.png)
 
 ---
 
