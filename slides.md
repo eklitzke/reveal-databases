@@ -114,7 +114,7 @@ known state.
 ## SQL
 
 SQL is a really funny programming language. It was designed in the 1970s around
-the same time as COBOL, when people though programming languages should look
+the same time as COBOL, when people thought programming languages should look
 like spoken English.
 
 By convention keywords are all caps, and table names and column names are
