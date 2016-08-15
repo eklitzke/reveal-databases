@@ -306,7 +306,13 @@ features, weaker transactionality, etc.
 
 # Questions?
 
-### Evan Klitzke / evan@uber.com
+----
+
+## Evan Klitzke
+
+### evan@uber.com
+
+### @eklitzke
 
 You can find this presentation on GitHub at:
 **https://github.com/eklitzke/reveal-databases**
