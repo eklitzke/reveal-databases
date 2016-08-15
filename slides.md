@@ -300,16 +300,11 @@ features, weaker transactionality, etc.
 
 ---
 
-## My Opinion
-
-Stick to relational databases if you can.
-
-I personally think the scaling problems for relational databases are over-hyped.
-But it really depends on your use case.
+## My Opinion on SQL vs. NoSQL
 
 ---
 
-# The End
+# Questions?
 
 ### Evan Klitzke / evan@uber.com
 
