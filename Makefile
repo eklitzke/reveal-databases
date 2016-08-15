@@ -1,4 +1,7 @@
 serve:
-	~/node_modules/.bin/reveal-md --theme blood slides.md
+	./node_modules/.bin/reveal-md --theme blood slides.md
 
-.PHONY: serve
+bootstrap:
+	npm install reveal-md
+
+.PHONY: bootstrap serve
