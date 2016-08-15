@@ -218,7 +218,7 @@ make queries fast.
 
 ---
 
-## Index Disavantages
+## Index Disadvantages
 
 Every time a new row is inserted or updated any indexes on that data will have
 to be updated. This takes up extra disk space and extra disk I/O.
